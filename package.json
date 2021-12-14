@@ -1,0 +1,15 @@
+{
+  "name": "backend-braga",
+  "version": "1.0.0",
+  "description": "Magang Braga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "Efri Triana Nur Arifin",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.25.0"
+  }
+}
