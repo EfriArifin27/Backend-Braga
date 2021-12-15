@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Tempat Evakuasi</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+  <style>
+    body { 
+        margin: 0; 
+        padding: 0; 
+    }
+    #map { 
+        position: absolute; 
+        top: 0; 
+        bottom: 0; 
+        width: 100%; 
+    }
+.marker {
+  background-image: url('Marker-1.png');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+  </style>
+</head>
+<body>
+<!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoic3V5YXRubzciLCJhIjoiY2t2dDVtanRpM2MxODJwcWc0dHBlcmhsbyJ9.4X1h6pTqfPqBzVyLUs2rJw';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [108.55663123101762,
+        -7.630840456480126],
+        zoom: 11
+    });
+    
+const geojson = { 
+
+    "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 1,
+        "x": 108.496836247,
+        "y": -7.79148631064,
+        "z": null,
+        "Nama": "Pantai Madasari"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.49671222200001,
+          -7.791452446999923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 2,
+        "x": 108.456486012,
+        "y": -7.73479270762,
+        "z": null,
+        "Nama": "Green Canyon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.45647513222002,
+          -7.734818058009324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 3,
+        "x": 108.454949839,
+        "y": -7.809815908,
+        "z": null,
+        "Nama": "Pacuan Kuda Legokjawa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.45501234046954,
+          -7.810083893574817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 4,
+        "x": 108.497608519,
+        "y": -7.73754014791,
+        "z": null,
+        "Nama": "Pantai Batukaras"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4969426778138,
+          -7.737314182568495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 5,
+        "x": 108.517742865,
+        "y": -7.69684941271,
+        "z": null,
+        "Nama": "Pantai Batuhiu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.51810593991075,
+          -7.697770173649268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 6,
+        "x": 108.533176085,
+        "y": -7.68938607559,
+        "z": null,
+        "Nama": "Penangkaran Penyu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.534914116,
+          -7.69229691199995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 7,
+        "x": 108.545441954,
+        "y": -7.60421032799,
+        "z": null,
+        "Nama": "Bodyrafting Citumang"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.55565102600008,
+          -7.605015671999958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 8,
+        "x": 108.52918534,
+        "y": -7.6354810215,
+        "z": null,
+        "Nama": "Wonderhill Jojogan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.5293334040978,
+          -7.635563265435662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 9,
+        "x": 108.638707262,
+        "y": -7.68721636243,
+        "z": null,
+        "Nama": "Pantai Pangandaran"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.63874544233319,
+          -7.686357141883247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 10,
+        "x": 108.659218598,
+        "y": -7.70543812181,
+        "z": null,
+        "Nama": "Cagar Alam Pangandaran"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.65908639541574,
+          -7.705543898543954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 11,
+        "x": 108.67630389,
+        "y": -7.68159933168,
+        "z": null,
+        "Nama": "PIAMARI"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.67573645133976,
+          -7.67976883777349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 12,
+        "x": 108.735261974,
+        "y": -7.68319314256,
+        "z": null,
+        "Nama": "Pantai Karang Nini"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.73535726922377,
+          -7.682896966140468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "No": 13,
+        "x": 108.430294967,
+        "y": -7.70770610886,
+        "z": null,
+        "Nama": "Curug Taringgul"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.43032172354756,
+          -7.707680050155014
+        ]
+      }
+    }
+  ]
+}
+// add markers to map
+for (const feature of geojson.features) {
+  // create a HTML element for each feature
+  const el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(feature.geometry.coordinates)
+    .setPopup(
+    new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(
+        `<h3>${feature.properties.Nama}</h3><p></p>`
+      )
+  )
+    .addTo(map);
+}
+</script>
+
+</body>
+</html>

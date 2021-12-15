@@ -5,11 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "node index",
+    "dev" : "nodemon index"
   },
   "author": "Efri Triana Nur Arifin",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.25.0"
+    "fastify": "^3.25.0",
+    "fastify-static": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+    "nodemonConfig":{
+      "ignore": ["*/node_modules",
+      ".gitignore",
+      "package.json"
+      ]
+    }
   }
 }
